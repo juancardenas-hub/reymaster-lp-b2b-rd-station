@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Obrigado! Recebemos sua solicitação — Reymaster</title>
+<meta name="description" content="Recebemos sua solicitação de cotação B2B. Nossa equipe vai analisar sua demanda e entrar em contato em breve.">
+<!--
+  PÁGINA DE OBRIGADO / THANK YOU — Reymaster (RD Station)
+  - Página completa e autossuficiente (CSS embutido). Publique como uma página separada
+    no RD Station e configure o formulário da LP para redirecionar até aqui após o envio.
+  - BOTÃO WHATSAPP: tem data-wa="thankyou". Cole o LINK RASTREÁVEL do Tintim no href
+    (procure por COLE_AQUI_O_LINK_TINTIM abaixo). Assim o lead que clica aqui continua
+    sendo atribuído à campanha, igual aos outros botões da LP.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --orange:#F48037; --orange-d:#E06A1F; --teal:#0B6156;
+    --graphite:#2A2A2A; --ink:#1A1F24; --muted:#5a6470;
+    --bg:#ffffff; --soft:#F5F6F8; --line:#E4E8EE; --green:#1f9d57;
+    --shadow:0 10px 30px rgba(20,30,45,.10); --shadow-sm:0 4px 14px rgba(20,30,45,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  h1,h2,h3{font-family:'Archivo','Inter',sans-serif;line-height:1.12}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;border:0;border-radius:8px;cursor:pointer;padding:15px 26px;font-size:16px;transition:.18s;line-height:1}
+  .btn-wa{background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(31,157,87,.30)}
+  .btn-wa:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(244,128,55,.35)}
+  .btn-primary:hover{background:var(--orange-d);transform:translateY(-1px)}
+
+  /* HEADER */
+  header{border-bottom:1px solid var(--line);background:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;flex-direction:column;line-height:1}
+  .logo b{font-family:'Archivo';font-weight:800;font-size:23px;color:var(--graphite);letter-spacing:.02em}
+  .logo b i{color:var(--orange);font-style:normal}
+  .logo span{font-size:10px;letter-spacing:.34em;color:var(--muted);font-weight:600;margin-top:2px}
+  .nav-phone{font-weight:700;color:var(--graphite);font-size:15px;text-align:right}
+  .nav-phone small{display:block;font-weight:500;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  @media(max-width:560px){.nav-phone{display:none}}
+
+  /* THANK YOU */
+  .ty{flex:1;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(160deg,#ffffff 0%, var(--soft) 100%);padding:56px 0}
+  .ty-card{max-width:620px;margin:0 auto;text-align:center;background:#fff;border:1px solid var(--line);
+      border-radius:16px;box-shadow:var(--shadow);padding:52px 44px}
+  .ty-check{width:84px;height:84px;border-radius:50%;background:rgba(31,157,87,.12);color:var(--green);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
+  .ty-check svg{width:44px;height:44px}
+  .ty-tag{display:inline-block;background:rgba(11,97,86,.10);color:var(--teal);font-weight:700;font-size:12.5px;
+      letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:30px;margin-bottom:18px}
+  .ty h1{font-size:34px;font-weight:800;color:var(--ink)}
+  .ty h1 em{color:var(--orange);font-style:normal}
+  .ty .sub{font-size:17px;color:var(--muted);margin:16px auto 30px;max-width:460px}
+  .ty-steps{text-align:left;max-width:430px;margin:0 auto 32px;display:grid;gap:14px}
+  .ty-step{display:flex;gap:13px;align-items:flex-start}
+  .ty-step .n{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;
+      font-family:'Archivo';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .ty-step p{font-size:14.5px;color:var(--graphite)}
+  .ty-step p b{color:var(--ink)}
+  .ty-wa-note{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .ty .btn-wa{font-size:16.5px;padding:16px 30px}
+
+  /* FOOTER */
+  footer{background:#11161b;color:#aeb7c1;font-size:14px}
+  footer .wrap{padding:34px 22px;text-align:center}
+  footer .logo{align-items:center;margin-bottom:12px}
+  footer .legal{border-top:1px solid #232a31;margin-top:18px;padding-top:18px;font-size:12px;color:#76808b}
+  footer a:hover{color:var(--orange)}
+
+  @media(max-width:560px){
+    .ty{padding:32px 0}
+    .ty-card{padding:38px 22px;border-radius:14px}
+    .ty h1{font-size:26px}
+    .ty .sub{font-size:15.5px}
+    .ty .btn-wa{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="logo" aria-label="Reymaster Materiais Elétricos">
+        <b>REY<i>MASTER</i></b><span>MATERIAIS ELÉTRICOS</span>
+      </div>
+      <div class="nav-phone">41-3075-5058<small>Paraná e Santa Catarina</small></div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="ty">
+    <div class="wrap">
+      <div class="ty-card">
+        <div class="ty-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <span class="ty-tag">Solicitação recebida</span>
+        <h1>Obrigado! <em>Recebemos</em> sua solicitação</h1>
+        <p class="sub">Sua solicitação de cotação chegou até a nossa equipe. Agora é com a gente.</p>
+
+        <div class="ty-steps">
+          <div class="ty-step"><div class="n">1</div><p><b>Análise da sua demanda</b> — nossa equipe técnica vai revisar os materiais e a aplicação que você informou.</p></div>
+          <div class="ty-step"><div class="n">2</div><p><b>Cotação B2B</b> — preparamos uma proposta competitiva, com condições para a sua empresa.</p></div>
+          <div class="ty-step"><div class="n">3</div><p><b>Contato</b> — nossa equipe entra em contato com você em breve para dar seguimento.</p></div>
+        </div>
+
+        <p class="ty-wa-note">Quer agilizar? Fale agora com a nossa equipe no WhatsApp:</p>
+        <a href="COLE_AQUI_O_LINK_TINTIM" data-wa="thankyou" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="logo"><b style="color:#fff">REY<i>MASTER</i></b><span style="color:#76808b">MATERIAIS ELÉTRICOS</span></div>
+      <p>Distribuidor de materiais elétricos para empresas, obras e indústrias em Paraná e Santa Catarina.</p>
+      <div class="legal">© <span id="yy"></span> Reymaster Materiais Elétricos · Preços competitivos sob cotação · Conteúdo B2B</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yy').textContent=new Date().getFullYear();</script>
+</body>
+</html>
