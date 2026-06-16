@@ -19,6 +19,8 @@ As logos usadas na secao de marcas estao em `assets/marcas/`.
 
 Antes de publicar, substitua `GTM-XXXXXXX` no `index.html` e no `obrigado.html` pelo ID real do container do Google Tag Manager. Dentro do GTM, use estes eventos de dataLayer:
 
+Veja o passo a passo completo em [`GUIA-GTM.md`](GUIA-GTM.md).
+
 - `whatsapp_click`: dispara quando qualquer link com `data-wa` e link rastreavel da Tintim e clicado. Use para Google Ads conversao de clique em WhatsApp e Meta Pixel `Contact`.
 - `lead_form_submit`: dispara na pagina `obrigado.html`, quando o RD Station redireciona apos envio do formulario. Use para Google Ads conversao principal e Meta Pixel `Lead`, se essa conversao nao estiver duplicada por outra integracao do RD.
 - `cotacao_cta_click`: mede cliques em CTAs que levam ao formulario, sem marcar lead.
