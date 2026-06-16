@@ -2,6 +2,10 @@
 
 Repositorio publico para compartilhar a landing page B2B da Reymaster e sua pagina de obrigado.
 
+## Link publico
+
+Landing page: https://juancardenas-hub.github.io/reymaster-lp-b2b-rd-station/
+
 ## Paginas
 
 - `index.html`: landing page principal.
